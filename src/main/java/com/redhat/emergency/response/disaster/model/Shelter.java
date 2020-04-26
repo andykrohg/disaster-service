@@ -2,11 +2,22 @@ package com.redhat.emergency.response.disaster.model;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.redhat.emergency.response.disaster.util.DoubleContextualSerializer;
+import com.redhat.emergency.response.disaster.util.Precision;
+
 public class Shelter {
     private String id;
     private String name;
+
+    @JsonSerialize(using = DoubleContextualSerializer.class)
+    @Precision(precision = 4)
     private BigDecimal lon;
+    
+    @JsonSerialize(using = DoubleContextualSerializer.class)
+    @Precision(precision = 4)
     private BigDecimal lat;
+    
     private int rescued;
 
     public Shelter() {   
