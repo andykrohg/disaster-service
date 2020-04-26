@@ -12,18 +12,18 @@ public class Shelter {
 
     @JsonSerialize(using = DoubleContextualSerializer.class)
     @Precision(precision = 4)
-    private BigDecimal lon;
+    private double lon;
     
     @JsonSerialize(using = DoubleContextualSerializer.class)
     @Precision(precision = 4)
-    private BigDecimal lat;
+    private double lat;
     
     private int rescued;
 
     public Shelter() {   
     }
 
-    public Shelter(String id, String name, BigDecimal lon, BigDecimal lat, int rescued) {
+    public Shelter(String id, String name, double lon, double lat, int rescued) {
         this.id = id;
         this.name = name;
         this.lon = lon;
@@ -47,19 +47,19 @@ public class Shelter {
         this.name = name;
     }
 
-    public BigDecimal getLon() {
+    public double getLon() {
         return this.lon;
     }
 
-    public void setLon(BigDecimal lon) {
+    public void setLon(double lon) {
         this.lon = lon;
     }
 
-    public BigDecimal getLat() {
+    public double getLat() {
         return this.lat;
     }
 
-    public void setLat(BigDecimal lat) {
+    public void setLat(double lat) {
         this.lat = lat;
     }
 
@@ -81,12 +81,12 @@ public class Shelter {
         return this;
     }
 
-    public Shelter lon(BigDecimal lon) {
+    public Shelter lon(double lon) {
         this.lon = lon;
         return this;
     }
 
-    public Shelter lat(BigDecimal lat) {
+    public Shelter lat(double lat) {
         this.lat = lat;
         return this;
     }
